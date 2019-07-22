@@ -5,10 +5,11 @@ I myself use the bundled linux binaries via Linux binary compatibility and do no
 
 ### Build
 
+We do not use the Docker since we do not have to cross-compile.
 Just run the build script.
 
 ```
-git clone https://github.com/zotero/cross-xpdf
+git clone https://github.com/s1tsu/cross-xpdf
 cd cross-xpdf
 ./build.sh
 ```
@@ -16,7 +17,8 @@ cd cross-xpdf
 `./build/pdftools.tar.gz` contains the built binaries and `poppler-data` directory.
 
 
-### Notes
-- xpdf download cite
-- gnu sed
-- patches
+### Main Changes to the original build script
+- changed xpdf download cite
+- use GNU sed (gsed)
+- apply FreeBSD patches for xpdf4
+- use GNU make (gmake)
