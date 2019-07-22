@@ -1,38 +1,22 @@
-`cross-xpdf` compiles [xpdf PDF tools](https://www.xpdfreader.com/) for macOS (x64), Windows (x86, x64), Linux (x86, x64).
+`cross-xpdf` compiles Zotero bundled [xpdf PDF tools](https://www.xpdfreader.com/) for FreeBSD.
 
-This is only intended to be used for `pdfinfo` and `pdftotext`.
-
-### pdfinfo
-`pdfinfo` is modified to output to a specified file.
-
-### pdftotext
-`pdftotext` is modified to output a preprocessed JSON that contains rich and structured information about the PDF and the text extracted from it:
-- PDF metadata
-- Page dimensions
-- Page count
-- Word position
-- Font size
-- Space after word
-- Baseline
-- Rotation
-- Bold
-- Italic
-- Color
-- Font
-
-Also, a command line switch is added to customize the path to `poppler-data` directory. 
+`build.sh` is modified based on `Dockerfile`.
+I myself use the bundled linux binaries via Linux binary compatibility and do not use this native build.
 
 ### Build
 
-PDF tools are build inside the Docker container.
-
-macOS 10.11 SDK is needed. Place `MacOSX10.11.sdk.tar.xz` to the current directory. [Extract it from Xcode 7.3](https://github.com/tpoechtrager/osxcross#packaging-the-sdk).
+Just run the build script.
 
 ```
 git clone https://github.com/zotero/cross-xpdf
 cd cross-xpdf
-mv path_to_sdk/MacOSX10.11.sdk.tar.xz ./
 ./build.sh
 ```
 
 `./build/pdftools.tar.gz` contains the built binaries and `poppler-data` directory.
+
+
+### Notes
+- xpdf download cite
+- gnu sed
+- patches
